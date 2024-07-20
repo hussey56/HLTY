@@ -47,12 +47,6 @@ const TabLayout = () => {
         tabBarStyle: {
           backgroundColor: "#ffffff",
           height: 60,
-          borderTopLeftRadius: 25,
-          borderTopRightRadius: 25,
-          borderBottomLeftRadius: 25,
-          borderBottomRightRadius: 25,
-          margin: 5,
-          marginBottom: 10,
         },
       }}
     >
@@ -67,13 +61,13 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="notifications"
+        name="appointments"
         options={{
-          title: "Notifications",
+          title: "Appointments",
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <TabIcon
-              icon={icons.notifications}
+              icon={icons.appointment}
               color={color}
               focused={focused}
             />

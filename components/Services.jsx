@@ -1,17 +1,18 @@
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { icons } from "../constants";
+import { router } from "expo-router";
 
 const ServiceItem = ({ item }) => {
   return (
-    <View className="px-3 py-3 shadow-sm bg-white relative items-center justify-center  rounded-xl mx-1 space-y-3">
+    <TouchableOpacity onPress={()=>router.push(item.route)} className="px-3 py-3 shadow-sm bg-white relative items-center justify-center  rounded-xl mx-1 space-y-3">
       <Image
         resizeMode="contain"
         source={item.image}
-        className="w-[52px] h-[52px]"
+        className="w-12 h-12"
       />
       <Text className="text-xs font-pregular">{item.name}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 const Services = () => {
@@ -19,7 +20,7 @@ const Services = () => {
     {
       id: 1,
       name: "Home Visit",
-      route: "/",
+      route: "/setting",
       image: icons.homeVisit,
     },
     {

@@ -21,7 +21,9 @@ import kidney from '../assets/icons/kidney.png'
 import stomach from '../assets/icons/stomach.png'
 import liver from '../assets/icons/liver.png'
 import lungs from '../assets/icons/lungs.png'
+import appointment from '../assets/icons/appointment.png'
 export default {
+  appointment,
   ambulance,
   pharmacy,
   homeVisit,
