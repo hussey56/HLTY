@@ -4,7 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#5ee3ee",
+        primary: {
+          DEFAULT: "#5ee3ee",
+          100: "#8cebf3",
+          200: "#2fdbe9",
+          300: "#16c1d0",
+          400: "#23e4f4",
+        },
         secondary: {
           DEFAULT: "#FF9C01",
           100: "#FF9001",
@@ -17,6 +23,38 @@ module.exports = {
         },
         gray: {
           100: "#CDCDE0",
+        },
+        general: {
+          100: "#CED1DD",
+          200: "#858585",
+          300: "#EEEEEE",
+          400: "#0CC25F",
+          500: "#F6F8FA",
+          600: "#E6F3FF",
+          700: "#EBEBEB",
+          800: "#ADADAD",
+        },
+        danger: {
+          100: "#FFF5F5",
+          200: "#FED7D7",
+          300: "#FEB2B2",
+          400: "#FC8181",
+          500: "#F56565",
+          600: "#E53E3E",
+          700: "#C53030",
+          800: "#9B2C2C",
+          900: "#742A2A",
+        },
+        warning: {
+          100: "#FFFBEB",
+          200: "#FEF3C7",
+          300: "#FDE68A",
+          400: "#FACC15",
+          500: "#EAB308",
+          600: "#CA8A04",
+          700: "#A16207",
+          800: "#854D0E",
+          900: "#713F12",
         },
       },
       fontFamily: {
@@ -33,7 +71,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
-
-
+};

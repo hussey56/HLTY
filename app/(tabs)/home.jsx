@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { icons, images } from "../../constants";
+import { images } from "../../constants";
 import { Colors } from "../../constants/Colors";
 import SearchInput from "../../components/SearchInput";
 import Services from "../../components/Services";
@@ -19,8 +19,11 @@ import NotificationIcon from "../../components/NotifcationIcon";
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
   return (
-    <SafeAreaView className="bg-light h-full">
-      <ScrollView>
+    <SafeAreaView className="bg-general-500 h-full">
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+      >
         <View className="my-4 px-4 space-y-5 ">
           <View className="justify-between items-center flex-row mb-3">
             <View className={"items-center justify-center"}>
@@ -37,17 +40,27 @@ const Home = () => {
                 }}
               />
             </View>
+
             <View>
-              <NotificationIcon count={5}/>
+              <NotificationIcon count={9} />
             </View>
           </View>
           <View className="px-[3.5]">
-            <Text className="text-3xl font-psemibold text-start">
-              Appointment with a consultant doctor
+            <Text
+              className="text-[34px] font-pblack text-start text-primary-300"
+              numberOfLines={1}
+            >
+              Find the Best
+            </Text>
+            <Text
+              className="text-[32px] font-pmedium text-start"
+              numberOfLines={1}
+            >
+              Doctors & Surgeons
             </Text>
           </View>
           <View className="mb-3">
-            <SearchInput placeholder={"Want to search anything.."} />
+            <SearchInput placeholder={"Search Doctors, Surgeons here ..."} />
           </View>
           <View className="mb-2">
             <SectionHeading
@@ -63,7 +76,7 @@ const Home = () => {
               subheading={"See more"}
               onPress={() => {}}
             />
-            <HomeCategories/>
+            <HomeCategories />
           </View>
         </View>
       </ScrollView>

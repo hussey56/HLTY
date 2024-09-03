@@ -5,13 +5,14 @@ import { router } from "expo-router";
 
 const ServiceItem = ({ item }) => {
   return (
-    <TouchableOpacity onPress={()=>router.push(item.route)} className="px-3 py-3 shadow-sm bg-white relative items-center justify-center  rounded-xl mx-1 space-y-3">
-      <Image
-        resizeMode="contain"
-        source={item.image}
-        className="w-12 h-12"
-      />
-      <Text className="text-xs font-pregular">{item.name}</Text>
+    <TouchableOpacity
+      onPress={() => router.push(item.route)}
+      className="px-3 py-3 shadow shadow-2xl  bg-white relative items-center justify-center mx-1 space-y-3 overflow-hidden rounded-xl"
+    >
+      <Image resizeMode="contain" source={item.image} className="w-14 h-14" />
+      <Text className="text-xs font-pregular" numberOfLines={1}>
+        {item.name}
+      </Text>
     </TouchableOpacity>
   );
 };

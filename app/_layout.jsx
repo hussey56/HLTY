@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react";
 import { SplashScreen, Stack } from "expo-router";
-import { useFonts } from 'expo-font';
+import { useFonts } from "expo-font";
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
@@ -21,29 +21,35 @@ const RootLayout = () => {
   }, [fontsLoaded, error]);
 
   if (!fontsLoaded && !error) return null;
-  
+
   return (
     <Stack>
-       <Stack.Screen
-          name="index"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="(tabs)"
-          options={{
-            headerShown: false,
-          }}
-        />
-         <Stack.Screen
-          name="(pages)"
-          options={{
-            headerShown: false,
-          }}
-        />
-      </Stack>
-  )
-}
+      <Stack.Screen
+        name="index"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="(tabs)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="(pages)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="(auth)"
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack>
+  );
+};
 
-export default RootLayout
+export default RootLayout;
