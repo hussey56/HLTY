@@ -6,6 +6,7 @@ import onboarding1 from "@/assets/images/onboarding1.jpg";
 import onboarding2 from "@/assets/images/onboarding2.jpg";
 import onboarding3 from "@/assets/images/onboarding3.png";
 import onboarding4 from "@/assets/images/onboarding4.png";
+import logo from "@/assets/images/icon.png";
 export default {
   profileimg,
   dr1,
@@ -15,4 +16,5 @@ export default {
   onboarding2,
   onboarding3,
   onboarding4,
+  logo,
 };

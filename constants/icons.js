@@ -1,4 +1,7 @@
 import home from "../assets/icons/home.png";
+import email from "@/assets/icons/email.png";
+import google from "@/assets/icons/google.png";
+import lock from "@/assets/icons/lock.png";
 import profile from "../assets/icons/profile.png";
 import leftArrow from "../assets/icons/left-arrow.png";
 import menu from "../assets/icons/menu.png";
@@ -21,7 +24,10 @@ import liver from "../assets/icons/liver.png";
 import lungs from "../assets/icons/lungs.png";
 import appointment from "../assets/icons/appointment.png";
 import message from "../assets/icons/Chat.png";
+import person from "../assets/icons/person.png";
 export default {
+  person,
+  google,
   message,
   appointment,
   ambulance,
@@ -45,4 +51,6 @@ export default {
   lungs,
   stomach,
   kidney,
+  email,
+  lock,
 };

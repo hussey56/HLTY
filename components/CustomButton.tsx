@@ -13,7 +13,7 @@ const getBgVariantStyle = (variant: ButtonProps["bgVariant"]) => {
     case "outline":
       return "bg-transparent border-neutral-300 border-[0.5px]";
     default:
-      return "bg-[#2fdbe9]";
+      return "bg-primary-300";
   }
 };
 
@@ -27,6 +27,8 @@ const getTextVariantStyle = (variant: ButtonProps["textVariant"]) => {
       return "text-red-100";
     case "success":
       return "text-green-100";
+    case "last":
+      return "text-general-200";
     default:
       return "text-white";
   }
@@ -40,6 +42,7 @@ const CustomButton = ({
   IconLeft,
   IconRight,
   className,
+  isDisabled,
   ...props
 }: ButtonProps) => {
   return (
@@ -52,7 +55,7 @@ const CustomButton = ({
     >
       {IconLeft && <IconLeft />}
       <Text
-        className={`text-lg font-pbold ${getTextVariantStyle(textVariant)}`}
+        className={`text-lg font-pregular ${getTextVariantStyle(textVariant)}`}
       >
         {title}
       </Text>
