@@ -2,6 +2,7 @@ import { View, Text, Image } from "react-native";
 import React from "react";
 import CustomButton from "./CustomButton";
 import { icons } from "@/constants";
+import OutlineButton from "./OutlineButton";
 
 const OAuth = () => {
   const handleGoogleSignIn = async () => {};
@@ -12,9 +13,9 @@ const OAuth = () => {
         <Text className="text-lg">Or</Text>
         <View className="flex-1 h-[1px] bg-general-100" />
       </View>
-      <CustomButton
+      <OutlineButton
         title="Continue with Google"
-        className="mt-5 w-full shadow-none"
+        className="mt-5"
         IconLeft={() => (
           <Image
             source={icons.google}
@@ -22,7 +23,6 @@ const OAuth = () => {
             className="w-5 h-5 mx-2"
           />
         )}
-        bgVariant="outline"
         textVariant="last"
         onPress={handleGoogleSignIn}
       />

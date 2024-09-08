@@ -12,7 +12,9 @@ const SignIn = () => {
     password: "",
   });
   const [showpassword, setShowPassword] = useState(true);
-  const onSignInPress = () => {};
+  const onSignInPress = () => {
+    router.replace("/(tabs)/home");
+  };
   const togglePassword = () => {
     setShowPassword(!showpassword);
   };
@@ -64,7 +66,7 @@ const SignIn = () => {
           <CustomButton
             title="Sign in"
             onPress={onSignInPress}
-            className="mt-6"
+            className="mt-6 shadow-none"
           />
           <OAuth />
           <Link

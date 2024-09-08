@@ -7,6 +7,8 @@ import onboarding2 from "@/assets/images/onboarding2.jpg";
 import onboarding3 from "@/assets/images/onboarding3.png";
 import onboarding4 from "@/assets/images/onboarding4.png";
 import logo from "@/assets/images/icon.png";
+import check from "@/assets/images/check.png";
+import empty from "@/assets/images/empty-activity.png";
 export default {
   profileimg,
   dr1,
@@ -17,4 +19,6 @@ export default {
   onboarding3,
   onboarding4,
   logo,
+  check,
+  empty,
 };

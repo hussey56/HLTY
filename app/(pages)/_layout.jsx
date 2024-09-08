@@ -1,17 +1,24 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import { Stack } from 'expo-router'
+import { View, Text } from "react-native";
+import React from "react";
+import { Stack } from "expo-router";
 
 const PageLayout = () => {
   return (
     <Stack>
-        <Stack.Screen
-        name='notifications'
+      <Stack.Screen
+        name="notifications"
         options={{
-            headerShown:false
-        }}/>
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="activitys"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
-  )
-}
+  );
+};
 
-export default PageLayout
+export default PageLayout;

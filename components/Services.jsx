@@ -7,10 +7,12 @@ const ServiceItem = ({ item }) => {
   return (
     <TouchableOpacity
       onPress={() => router.push(item.route)}
-      className="px-3 py-3 shadow shadow-2xl  bg-white relative items-center justify-center mx-1 space-y-3 overflow-hidden rounded-xl"
+      className="p-1 relative items-center justify-center mx-1 space-y-2 overflow-hidden"
     >
-      <Image resizeMode="contain" source={item.image} className="w-14 h-14" />
-      <Text className="text-xs font-pregular" numberOfLines={1}>
+      <View className="bg-white border-[.25px] border-neutral-300 p-3 rounded-full ">
+        <Image resizeMode="contain" source={item.image} className="w-12 h-12" />
+      </View>
+      <Text className="text-xs font-pmedium" numberOfLines={1}>
         {item.name}
       </Text>
     </TouchableOpacity>
@@ -22,25 +24,32 @@ const Services = () => {
       id: 1,
       name: "Home Visit",
       route: "/setting",
-      image: icons.homeVisit,
+      image: icons.doctor,
     },
     {
       id: 2,
       name: "Clinic Visit",
       route: "/",
-      image: icons.clinic,
-    },
-    {
-      id: 3,
-      name: "Ambulance",
-      route: "/",
-      image: icons.ambulance,
+      image: icons.hospital,
     },
     {
       id: 4,
+      name: "Reports",
+      route: "/",
+      image: icons.reports,
+    },
+
+    {
+      id: 5,
       name: "Medicine",
       route: "/",
       image: icons.pharmacy,
+    },
+    {
+      id: 6,
+      name: "Ambulance",
+      route: "/",
+      image: icons.ambulance,
     },
   ];
   return (

@@ -7,7 +7,7 @@ import { router } from "expo-router";
 const NotificationIcon = ({ count }) => {
   return (
     <TouchableOpacity
-      onPress={() => router.push("/notifications")}
+      onPress={() => router.replace("/(auth)/sign-in")}
       className="relative"
     >
       <View className="w-11 h-11 bg-white shadow shadow-sm  rounded-full flex items-center justify-center">

@@ -43,9 +43,7 @@ const ForgetPassword = () => {
         />
       </TouchableOpacity>
       <View className="px-5 py-2">
-        <Text className="text-black text-3xl font-psemibold">
-          Forget Password
-        </Text>
+        <Text className="text-black text-3xl font-pbold">Forget Password</Text>
         <Text className="text-md font-pregular text-general-200 py-1">
           Provide your account's email for which you want to reset password.
         </Text>
@@ -57,7 +55,11 @@ const ForgetPassword = () => {
           value={form.email}
           onChangeText={(value) => setForm({ ...form, email: value })}
         />
-        <CustomButton title="Find" onPress={onFindAccount} className="mt-2" />
+        <CustomButton
+          title="Find Account"
+          onPress={onFindAccount}
+          className="mt-2"
+        />
       </View>
       <ReactNativeModal
         isVisible={verification.state === "pending"}
@@ -66,10 +68,11 @@ const ForgetPassword = () => {
         }}
       >
         <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
-          <Text className="text-3xl font-JakartaExtraBold mb-2">
-            Account Verification
+          <Text className="text-3xl font-pextrabold mb-2">Verification</Text>
+          <Text>
+            We've sent a verification code to{" "}
+            <Text className="text-general-200 ">{form.email}</Text>
           </Text>
-          <Text>We've sent a verification code to {form.email}</Text>
           <InputField
             label="Code"
             icon={icons.lock}

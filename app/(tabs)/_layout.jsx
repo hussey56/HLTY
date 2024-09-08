@@ -25,17 +25,44 @@ const TabIcon = ({ focused, source }) => {
     </View>
   );
 };
+const ChatIcon = ({ focused, count }) => {
+  return (
+    <View
+      className={`flex flex-row justify-center items-center rounded-full ${
+        focused ? "bg-primary" : ""
+      }`}
+    >
+      {count >= 1 && (
+        <View className="absolute z-[2] bottom-[0] right-0 bg-red-500 w-5 h-5 rounded-full flex items-center justify-center">
+          <Text className="text-white text-xs text-center">
+            {count > 9 ? `9+` : count}
+          </Text>
+        </View>
+      )}
+      <View
+        className={`rounded-full w-12 h-12 items-center justify-center ${
+          focused ? "bg-primary" : ""
+        }`}
+      >
+        <Image
+          source={icons.message}
+          tintColor={focused ? "black" : "white"}
+          resizeMode="contain"
+          className="w-7 h-7"
+        />
+      </View>
+    </View>
+  );
+};
 const ProfileIcon = ({ focused }) => {
   return (
-    <View className={"items-center justify-center "}>
+    <View className={"items-center justify-center"}>
       <Image
         source={images.profileimg}
         resizeMode="contain"
-        style={{
-          borderColor: focused ? Colors.primary : "transparent",
-          borderWidth: 2,
-        }}
-        className="w-12 h-12 rounded-3xl"
+        className={`w-12 h-12 rounded-full ${
+          focused && "border-primary-300 border-2 "
+        } `}
       />
     </View>
   );
@@ -91,9 +118,7 @@ const TabLayout = () => {
         options={{
           title: "Chats",
           headerShown: false,
-          tabBarIcon: ({ focused }) => (
-            <TabIcon source={icons.message} focused={focused} />
-          ),
+          tabBarIcon: ({ focused }) => <ChatIcon focused={focused} count={2} />,
         }}
       />
 

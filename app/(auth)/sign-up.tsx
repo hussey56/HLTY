@@ -1,10 +1,12 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, Alert } from "react-native";
 import React, { useState } from "react";
 import { icons, images } from "@/constants";
 import InputField from "@/components/TextInput";
 import CustomButton from "@/components/CustomButton";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import OAuth from "@/components/OAuth";
+import ReactNativeModal from "react-native-modal";
+import { Colors } from "@/constants/Colors";
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -13,7 +15,25 @@ const SignUp = () => {
     password: "",
   });
   const [showpassword, setShowPassword] = useState(true);
-  const onSignInPress = () => {};
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [verification, setVerification] = useState({
+    state: "default",
+    error: "",
+    code: "",
+  });
+  const regexemail =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const onPressVerify = async () => {
+    setVerification({ ...verification, state: "success" });
+  };
+  const onSignInPress = () => {
+    if (form.email === "" || !form.email.toLowerCase().match(regexemail)) {
+      Alert.alert("Error", "Please Enter a valid email!");
+      return;
+    }
+    setVerification({ ...verification, state: "pending" });
+  };
   const togglePassword = () => {
     setShowPassword(!showpassword);
   };
@@ -64,7 +84,7 @@ const SignUp = () => {
           <CustomButton
             title="Sign up"
             onPress={onSignInPress}
-            className="mt-6"
+            className="mt-6 shadow-none"
           />
           <OAuth />
           <Link
@@ -74,6 +94,64 @@ const SignUp = () => {
             <Text>Already have an account? </Text>
             <Text className="text-primary-300">Login</Text>
           </Link>
+          <ReactNativeModal
+            isVisible={verification.state === "pending"}
+            onModalHide={() => {
+              if (verification.state === "success") setShowSuccessModal(true);
+            }}
+          >
+            <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
+              <Text className="text-3xl font-JakartaExtraBold mb-2">
+                Verification
+              </Text>
+              <Text>We've sent a verification code to {form.email}</Text>
+              <InputField
+                label="Code"
+                icon={icons.lock}
+                placeholder="12345"
+                value={verification.code}
+                keyboardType="numeric"
+                onChangeText={(code) =>
+                  setVerification({ ...verification, code })
+                }
+              />
+              {verification.error && (
+                <Text className="text-red-500 text-sm mt-1">
+                  {verification.error}
+                </Text>
+              )}
+              <CustomButton
+                title="Verify Email"
+                onPress={onPressVerify}
+                className="mt-5 bg-success-500"
+              />
+            </View>
+          </ReactNativeModal>
+          {/* Varification Model */}
+          <ReactNativeModal isVisible={showSuccessModal}>
+            <View className="bg-white px-7 py-9 rounded-2xl min-h-[300px]">
+              <Image
+                source={images.check}
+                className="w-[110px] h-[110px] mx-auto my-5"
+              />
+              <Text className="text-3xl font-JakartaBold text-center">
+                Verified
+              </Text>
+              <Text className="text-base text-center mt-2 text-gray-400 font-Jakarta">
+                You have successfully verified your account.
+              </Text>
+
+              <CustomButton
+                title="Browse Home"
+                onPress={() => {
+                  setShowSuccessModal(false);
+                  router.push("/(tabs)/home");
+                }}
+                className="mt-5 shadow-none"
+                bgVariant="primary"
+              />
+            </View>
+          </ReactNativeModal>
         </View>
       </View>
     </ScrollView>

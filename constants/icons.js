@@ -25,7 +25,16 @@ import lungs from "../assets/icons/lungs.png";
 import appointment from "../assets/icons/appointment.png";
 import message from "../assets/icons/Chat.png";
 import person from "../assets/icons/person.png";
+import doctor from "@/assets/icons/doctor.png";
+import hospital from "@/assets/icons/hospital.png";
+import reports from "@/assets/icons/reports.png";
+import tests from "@/assets/icons/tests.png";
+
 export default {
+  doctor,
+  hospital,
+  reports,
+  tests,
   person,
   google,
   message,

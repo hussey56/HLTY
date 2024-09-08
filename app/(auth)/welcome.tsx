@@ -12,23 +12,27 @@ const onBoarding = () => {
   const isLastSlide = activeIndex === onboarding.length - 1;
   return (
     <SafeAreaView className="flex h-full items-center justify-between bg-white">
-      <TouchableOpacity
-        className="w-full flex justify-end items-end p-5"
-        onPress={() => router.replace("/(auth)/sign-in")}
-      >
-        <Text className="text-black text-md font-psemibold ">Skip</Text>
-      </TouchableOpacity>
+      <View className="w-full flex flex-row justify-between items-center p-5">
+        <View className="py-1 px-3 bg-primary-300 rounded-full">
+          <Text className="text-white font-pregular text-sm">
+            {activeIndex + 1} <Text className="text-gray">/</Text>{" "}
+            <Text className="font-pmedium ">3</Text>
+          </Text>
+        </View>
+        <TouchableOpacity onPress={() => router.replace("/(auth)/sign-in")}>
+          <Text className="text-black text-md font-psemibold ">Skip</Text>
+        </TouchableOpacity>
+      </View>
+
       <Swiper
+        paginationStyle={{ display: "none" }}
         ref={swiperRef}
         loop={false}
-        dotStyle={{
-          display: "none",
-        }}
         dot={
-          <View className="w-[32px] h-[4px] mx-1 bg-[#E2E8F0] rounded-full " />
+          <View className="w-[13px] h-[13px] mx-1 bg-[#E2E8F0] rounded-full " />
         }
         activeDot={
-          <View className="w-[32px] h-[4px] mx-1 bg-primary-400 rounded-full " />
+          <View className="w-[13px] h-[13px] mx-1 bg-primary-400 rounded-full " />
         }
         onIndexChanged={(index) => setActiveIndex(index)}
       >
@@ -43,7 +47,7 @@ const onBoarding = () => {
               resizeMode="contain"
             />
             <View className="flex flex-row items-center justify-center w-full mt-10">
-              <Text className="text-black text-3xl font-pbold mx-10 text-center">
+              <Text className="text-black text-3xl font-pbold mx-auto text-center">
                 {item.title}
               </Text>
             </View>
