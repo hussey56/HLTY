@@ -29,8 +29,17 @@ import doctor from "@/assets/icons/doctor.png";
 import hospital from "@/assets/icons/hospital.png";
 import reports from "@/assets/icons/reports.png";
 import tests from "@/assets/icons/tests.png";
-
+import acdoctor from "@/assets/icons/ac-doctor.png";
+import acclinic from "@/assets/icons/ac-hospital.png";
+import acambulance from "@/assets/icons/ac-ambulance.png";
+import acreports from "@/assets/icons/ac-report.png";
+import acpharmacy from "@/assets/icons/ac-drugs.png";
 export default {
+  acdoctor,
+  acclinic,
+  acambulance,
+  acreports,
+  acpharmacy,
   doctor,
   hospital,
   reports,

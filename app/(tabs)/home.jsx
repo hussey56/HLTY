@@ -3,7 +3,6 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
-import { Colors } from "../../constants/Colors";
 import SearchInput from "../../components/SearchInput";
 import Services from "../../components/Services";
 import SectionHeading from "../../components/SectionHeading";
@@ -13,7 +12,11 @@ import HomeEmptyState from "../../components/HomeEmptyState";
 import { router } from "expo-router";
 const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
-  const [activitys, setActivitys] = useState([]);
+  const [activitys, setActivitys] = useState([
+    { _id: 1, name: "Appointment" },
+    { _id: 11, name: "Ambulance" },
+    { _id: 2, name: "Reports" },
+  ]);
 
   const refreshActivity = async () => {
     setRefreshing(true);
@@ -24,6 +27,7 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-general-500 h-full">
       <FlatList
+        className="mb-12"
         data={activitys}
         keyExtractor={(item) => item._id}
         renderItem={({ item }) => <ActivityCard activity={item} />}
@@ -68,6 +72,7 @@ const Home = () => {
                 heading={"How can we assist you?"}
                 subheading={"Need Help"}
                 onPress={() => {}}
+                classname={"mb-4"}
               />
               <Services />
             </View>
