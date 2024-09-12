@@ -3,6 +3,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { icons } from "../constants";
 import { router } from "expo-router";
+import { Colors } from "../constants/Colors";
 
 const NotificationIcon = ({ count }) => {
   return (
@@ -10,7 +11,7 @@ const NotificationIcon = ({ count }) => {
       onPress={() => router.replace("/(auth)/sign-in")}
       className="relative"
     >
-      <View className="w-11 h-11 bg-white shadow shadow-sm  rounded-full flex items-center justify-center">
+      <View className="w-11 shadow h-11 flex items-center justify-center rounded-full bg-white">
         <Image
           resizeMode="contain"
           source={icons.notifications}

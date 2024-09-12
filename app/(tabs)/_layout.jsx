@@ -77,7 +77,7 @@ const TabLayout = () => {
         tabBarInactiveTintColor: "white",
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#333333",
+          backgroundColor: "#1E1E2D",
           borderRadius: 50,
           paddingBottom: 0,
           overflow: "hidden",

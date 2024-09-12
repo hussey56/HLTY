@@ -9,10 +9,16 @@ const ServiceItem = ({ item }) => {
       onPress={() => router.push(item.route)}
       className="p-1 relative items-center justify-center mx-1 space-y-2 overflow-hidden"
     >
-      <View className="bg-white border-[.25px] border-neutral-300 p-3 rounded-full ">
-        <Image resizeMode="contain" source={item.image} className="w-12 h-12" />
+      <View className="bg-transparent p-1 rounded-full border-[2px] border-primary-100 ">
+        <View className="bg-general-500 p-3 rounded-full ">
+          <Image
+            resizeMode="contain"
+            source={item.image}
+            className="w-12 h-12"
+          />
+        </View>
       </View>
-      <Text className="text-xs font-pmedium" numberOfLines={1}>
+      <Text className="text-xs font-pmedium text-black " numberOfLines={1}>
         {item.name}
       </Text>
     </TouchableOpacity>

@@ -32,58 +32,68 @@ const Home = () => {
         keyExtractor={(item) => item._id}
         renderItem={({ item }) => <ActivityCard activity={item} />}
         ListHeaderComponent={() => (
-          <View className="my-4 px-4 space-y-5 ">
-            <View className="justify-between items-center flex-row mb-3">
-              <View
-                className={
-                  "items-center justify-center rounded-full p-1 border-2 border-primary"
-                }
-              >
-                <Image
-                  source={images.profileimg}
-                  resizeMode="contain"
-                  className="w-14 h-14 rounded-full"
+          <>
+            <View className="my-4 px-4 space-y-4">
+              <View className="justify-between items-center flex-row mb-2">
+                <View
+                  className={
+                    "items-center justify-center rounded-full p-1 border-2 border-primary-300"
+                  }
+                >
+                  <Image
+                    source={images.profileimg}
+                    resizeMode="contain"
+                    className="w-14 h-14 rounded-full"
+                  />
+                </View>
+
+                <View>
+                  <NotificationIcon count={9} />
+                </View>
+              </View>
+            </View>
+            <View className="px-2 ">
+              <View className="bg-black-100 rounded-[20px] px-[14px] py-1 ">
+                <View className="my-3">
+                  <Text
+                    className="text-[34px] font-pbold text-start text-primary-100 "
+                    numberOfLines={1}
+                  >
+                    Find the Best
+                  </Text>
+                  <Text
+                    className="text-[32px] font-pbold text-start text-white"
+                    numberOfLines={1}
+                  >
+                    Doctors & Surgeons
+                  </Text>
+                </View>
+                <View className="mb-3">
+                  <SearchInput
+                    placeholder={"Search Doctors, Surgeons here..."}
+                  />
+                </View>
+              </View>
+            </View>
+            <View className="my-4 px-4 space-y-5 ">
+              <View className="mb-2">
+                <SectionHeading
+                  heading={"How can we assist you?"}
+                  subheading={"Need Help"}
+                  onPress={() => {}}
+                  classname={"mb-4"}
+                />
+                <Services />
+              </View>
+              <View className="mt-1">
+                <SectionHeading
+                  heading={"Recent Activity"}
+                  subheading={"View all"}
+                  onPress={() => router.push("/(pages)/activitys")}
                 />
               </View>
-
-              <View>
-                <NotificationIcon count={9} />
-              </View>
             </View>
-            <View className="px-[3.5]">
-              <Text
-                className="text-[34px] font-pblack text-start text-primary-300"
-                numberOfLines={1}
-              >
-                Find the Best
-              </Text>
-              <Text
-                className="text-[32px] font-pmedium text-start"
-                numberOfLines={1}
-              >
-                Doctors & Surgeons
-              </Text>
-            </View>
-            <View className="mb-3">
-              <SearchInput placeholder={"Search Doctors, Surgeons here..."} />
-            </View>
-            <View className="mb-2">
-              <SectionHeading
-                heading={"How can we assist you?"}
-                subheading={"Need Help"}
-                onPress={() => {}}
-                classname={"mb-4"}
-              />
-              <Services />
-            </View>
-            <View className="mt-1">
-              <SectionHeading
-                heading={"Recent Activity"}
-                subheading={"View all"}
-                onPress={() => router.push("/(pages)/activitys")}
-              />
-            </View>
-          </View>
+          </>
         )}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={refreshActivity} />
@@ -99,7 +109,7 @@ const Home = () => {
         )}
         showsVerticalScrollIndicator={false}
       />
-      <StatusBar style="dark" backgroundColor="#000000" />
+      <StatusBar style="dark" backgroundColor="#8cebf3" />
     </SafeAreaView>
   );
 };
