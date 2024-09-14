@@ -5,19 +5,15 @@ import { icons, images } from "../../constants";
 import { Colors } from "@/constants/Colors";
 const TabIcon = ({ focused, source }) => {
   return (
-    <View
-      className={`flex flex-row justify-center items-center rounded-full ${
-        focused ? "bg-primary" : ""
-      }`}
-    >
+    <View className={`flex flex-row justify-center items-center rounded-full `}>
       <View
         className={`rounded-full w-12 h-12 items-center justify-center ${
-          focused ? "bg-primary" : ""
+          focused ? "bg-white" : ""
         }`}
       >
         <Image
           source={source}
-          tintColor={focused ? "black" : "white"}
+          tintColor={focused ? "#232533" : "white"}
           resizeMode="contain"
           className="w-7 h-7"
         />
@@ -41,12 +37,12 @@ const ChatIcon = ({ focused, count }) => {
       )}
       <View
         className={`rounded-full w-12 h-12 items-center justify-center ${
-          focused ? "bg-primary" : ""
+          focused ? "bg-white" : ""
         }`}
       >
         <Image
           source={icons.message}
-          tintColor={focused ? "black" : "white"}
+          tintColor={focused ? "#232533" : "white"}
           resizeMode="contain"
           className="w-7 h-7"
         />
@@ -61,7 +57,7 @@ const ProfileIcon = ({ focused }) => {
         source={images.profileimg}
         resizeMode="contain"
         className={`w-12 h-12 rounded-full ${
-          focused && "border-primary-300 border-2 "
+          focused ? "border-none " : "border-white border-[1px]"
         } `}
       />
     </View>
@@ -77,10 +73,11 @@ const TabLayout = () => {
         tabBarInactiveTintColor: "white",
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#1E1E2D",
-          borderRadius: 50,
+          backgroundColor: "#16c1d0",
+          borderColor: "#16c1d0",
           paddingBottom: 0,
           overflow: "hidden",
+          borderRadius: 50,
           marginBottom: 20,
           marginHorizontal: 20,
           height: 78,
@@ -118,7 +115,9 @@ const TabLayout = () => {
         options={{
           title: "Chats",
           headerShown: false,
-          tabBarIcon: ({ focused }) => <ChatIcon focused={focused} count={2} />,
+          tabBarIcon: ({ focused }) => (
+            <ChatIcon focused={focused} count={88} />
+          ),
         }}
       />
 

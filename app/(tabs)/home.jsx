@@ -33,11 +33,11 @@ const Home = () => {
         renderItem={({ item }) => <ActivityCard activity={item} />}
         ListHeaderComponent={() => (
           <>
-            <View className="my-4 px-4 space-y-4">
+            <View className="my-1 px-4 space-y-4 ">
               <View className="justify-between items-center flex-row mb-2">
                 <View
                   className={
-                    "items-center justify-center rounded-full p-1 border-2 border-primary-300"
+                    "items-center justify-center rounded-[35px] p-1 border-2 border-primary"
                   }
                 >
                   <Image
@@ -48,24 +48,24 @@ const Home = () => {
                 </View>
 
                 <View>
-                  <NotificationIcon count={9} />
+                  <NotificationIcon count={1} />
                 </View>
               </View>
             </View>
-            <View className="px-2 ">
-              <View className="bg-black-100 rounded-[20px] px-[14px] py-1 ">
+            <View className="px-[7px] mb-[0.5px] rounded-3xl py-1">
+              <View className="bg-[#000303dc] border-neutral-200 border-[1px] rounded-[25px] px-[15px] py-1">
                 <View className="my-3">
                   <Text
-                    className="text-[34px] font-pbold text-start text-primary-100 "
+                    className="text-3xl font-pbold text-start text-general-500  "
                     numberOfLines={1}
                   >
                     Find the Best
                   </Text>
                   <Text
-                    className="text-[32px] font-pbold text-start text-white"
+                    className="text-3xl font-pbold text-start  text-[#29dde0dc]"
                     numberOfLines={1}
                   >
-                    Doctors & Surgeons
+                    Doctors <Text className="text-general-300">&</Text> Surgeons
                   </Text>
                 </View>
                 <View className="mb-3">
@@ -75,6 +75,7 @@ const Home = () => {
                 </View>
               </View>
             </View>
+
             <View className="my-4 px-4 space-y-5 ">
               <View className="mb-2">
                 <SectionHeading
@@ -109,7 +110,6 @@ const Home = () => {
         )}
         showsVerticalScrollIndicator={false}
       />
-      <StatusBar style="dark" backgroundColor="#8cebf3" />
     </SafeAreaView>
   );
 };

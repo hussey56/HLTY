@@ -11,12 +11,12 @@ const NotificationIcon = ({ count }) => {
       onPress={() => router.replace("/(auth)/sign-in")}
       className="relative"
     >
-      <View className="w-11 shadow h-11 flex items-center justify-center rounded-full bg-white">
+      <View className="w-11  h-11 flex items-center justify-center rounded-full bg-white shadow-sm">
         <Image
           resizeMode="contain"
-          source={icons.notifications}
+          source={icons.bell}
           className="w-6 h-6"
-          tintColor={"black"}
+          tintColor={"#3cc7d3"}
         />
       </View>
       {count > 0 && (

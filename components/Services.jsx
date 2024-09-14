@@ -7,9 +7,9 @@ const ServiceItem = ({ item }) => {
   return (
     <TouchableOpacity
       onPress={() => router.push(item.route)}
-      className="p-1 relative items-center justify-center mx-1 space-y-2 overflow-hidden"
+      className="p-1 items-center justify-center mx-1 space-y-2 overflow-hidden"
     >
-      <View className="bg-transparent p-1 rounded-full border-[2px] border-primary-100 ">
+      <View className="p-1  rounded-full bg-primary-100 ">
         <View className="bg-general-500 p-3 rounded-full ">
           <Image
             resizeMode="contain"

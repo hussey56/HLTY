@@ -7,7 +7,7 @@ export default SearchInput = ({ placeholder, value = "" }) => {
   const pathname = usePathname();
   const [query, setQuery] = useState(value);
   return (
-    <View className="shadow border-2 border-white w-full h-16 px-4 bg-white rounded-2xl focus:border-primary items-center flex-row space-x-4">
+    <View className="shadow border-2 border-neutral-200 w-full h-16 px-4 bg-white rounded-2xl focus:border-primary items-center flex-row space-x-4">
       <TextInput
         className="text-base mt-0.5 text-black flex-1 font-pregular "
         value={query}

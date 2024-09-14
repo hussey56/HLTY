@@ -34,7 +34,21 @@ import acclinic from "@/assets/icons/ac-hospital.png";
 import acambulance from "@/assets/icons/ac-ambulance.png";
 import acreports from "@/assets/icons/ac-report.png";
 import acpharmacy from "@/assets/icons/ac-drugs.png";
+import bell from "@/assets/icons/bell.png";
+import id from "@/assets/icons/id.png";
+import calender from "@/assets/icons/calender.png";
+import location from "@/assets/icons/location.png";
+import bill from "@/assets/icons/bill.png";
+import patient from "@/assets/icons/patient.png";
+import deleteicon from "@/assets/icons/delete.png";
 export default {
+  deleteicon,
+  patient,
+  bill,
+  id,
+  calender,
+  location,
+  bell,
   acdoctor,
   acclinic,
   acambulance,
