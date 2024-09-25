@@ -69,9 +69,7 @@ const Home = () => {
                   </Text>
                 </View>
                 <View className="mb-3">
-                  <SearchInput
-                    placeholder={"Search Doctors, Surgeons here..."}
-                  />
+                  <SearchInput placeholder={"Search for Doctors, Surgeons."} />
                 </View>
               </View>
             </View>

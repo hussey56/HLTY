@@ -3,7 +3,7 @@ import React from "react";
 import { images } from "../constants";
 import { router } from "expo-router";
 import CustomButton from "./CustomButton";
-const HomeEmptyState = ({
+const MessagesEmptyState = ({
   image = images.empty,
   title,
   subtitle,
@@ -18,34 +18,21 @@ const HomeEmptyState = ({
 }) => {
   return (
     <View
-      className={`justify-center items-center px-4 text-center space-y-2 ${classname}`}
+      className={`justify-center items-center px-4 text-center space-y-1 ${classname}`}
     >
       <Image
         source={image}
-        className="w-[270px] h-[270px] mb-3"
+        className="w-[260px] h-[260px] mb-1"
         resizeMode="contain"
       />
-      <Text className="text-2xl font-psemibold text-black text-center">
+      <Text className="text-2xl font-pbold text-primary-500 text-center">
         {title}
       </Text>
       <Text className="font-pmedium text-md text-general-200 text-center">
         {subtitle}
       </Text>
-
-      {button && (
-        <>
-          <View className="my-6"></View>
-          <CustomButton
-            title="Book an Appointment"
-            bgVariant="primary"
-            textVariant="success"
-            className="shadow-none"
-            onPress={() => router.push("/(tabs)/home")}
-          />
-        </>
-      )}
     </View>
   );
 };
 
-export default HomeEmptyState;
+export default MessagesEmptyState;

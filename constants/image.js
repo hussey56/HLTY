@@ -9,6 +9,7 @@ import onboarding4 from "@/assets/images/onboarding4.png";
 import logo from "@/assets/images/icon.png";
 import check from "@/assets/images/check.png";
 import empty from "@/assets/images/empty-activity.png";
+import emptychat from "@/assets/images/emptychat.png";
 export default {
   profileimg,
   dr1,
@@ -21,4 +22,5 @@ export default {
   logo,
   check,
   empty,
+  emptychat,
 };
