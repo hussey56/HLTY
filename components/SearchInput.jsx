@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { icons } from "../constants";
 import { router, usePathname } from "expo-router";
 import { Colors } from "../constants/Colors";
-export default SearchInput = ({ placeholder, value = "", className }) => {
+export default SearchInput = ({ placeholder, value = "", className = "" }) => {
   const pathname = usePathname();
   const [query, setQuery] = useState(value);
   return (

@@ -1,10 +1,14 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { icons, images } from "@/constants";
+import { router } from "expo-router";
 
 const MessageTile = ({ msginfo }: { msginfo: any }) => {
   return (
-    <View className="px-2 h-16 my-1 ">
+    <TouchableOpacity
+      className="px-2 h-16 my-1"
+      onPress={() => router.push(`/chatscreen/` + msginfo._id)}
+    >
       <View className="flex-row items-center">
         <View className="mr-1">
           <Image
@@ -40,7 +44,7 @@ const MessageTile = ({ msginfo }: { msginfo: any }) => {
           )}
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
