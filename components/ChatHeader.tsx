@@ -22,7 +22,7 @@ const ChatHeader = ({ router }: { router: any }) => {
               <Image
                 source={images.profileimg}
                 style={{
-                  height: hp(5),
+                  height: hp(5.6),
                   borderRadius: 100,
                 }}
                 className="w-10"
@@ -38,7 +38,7 @@ const ChatHeader = ({ router }: { router: any }) => {
           </View>
         ),
         headerRight: () => (
-          <View className="flex-row items-center gap-8">
+          <View className="flex-row items-center gap-x-6">
             <Ionicons name="call" size={hp(3.4)} color={"#737373"} />
             <Ionicons name="videocam" size={hp(3.4)} color={"#737373"} />
           </View>
