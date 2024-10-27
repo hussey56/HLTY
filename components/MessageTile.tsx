@@ -10,7 +10,7 @@ const MessageTile = ({ msginfo }: { msginfo: any }) => {
       onPress={() => router.push(`/chatscreen/` + msginfo._id)}
     >
       <View className="flex-row items-center">
-        <View className="mr-1">
+        <View className="mr-2">
           <Image
             source={msginfo.image}
             className="h-14 w-14 rounded-full"

@@ -1,8 +1,10 @@
-import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
+import { View, Text, FlatList, useWindowDimensions } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
-import { router } from "expo-router";
+import { TabView, SceneMap, TabBar } from "react-native-tab-view";
+import ActivityCard from "../../components/ActivityCard";
+
 const appointmentsData = {
   upcoming: [
     { id: "1", dr: "John Alam", date: "2024-07-20", img: images.dr1 },
@@ -20,13 +22,68 @@ const appointmentsData = {
   ],
 };
 
+const FirstRoute = () => (
+  <SafeAreaView className="flex-1 bg-general-500 mb-28">
+    <FlatList
+      showsVerticalScrollIndicator={false}
+      data={appointmentsData.upcoming}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+        <ActivityCard activity={item} showButton={false} />
+      )}
+    />
+  </SafeAreaView>
+);
+
+const SecondRoute = () => (
+  <SafeAreaView className="flex-1 bg-general-500 mb-28">
+    <FlatList
+      showsVerticalScrollIndicator={false}
+      data={appointmentsData.completed}
+      keyExtractor={(item) => item.id}
+      renderItem={({ item }) => (
+        <ActivityCard activity={item} showButton={false} />
+      )}
+    />
+  </SafeAreaView>
+);
+
+const renderScene = SceneMap({
+  first: FirstRoute,
+  second: SecondRoute,
+});
+
 const Appointments = () => {
-  const [upcoming, setUpComing] = useState(true);
+  const layout = useWindowDimensions();
+
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: "first", title: "Upcoming" },
+    { key: "second", title: "Completed" },
+  ]);
+  const renderTabBar = (props) => (
+    <TabBar
+      {...props}
+      activeColor="#000000"
+      inactiveColor="#00006ef"
+      indicatorStyle={{
+        backgroundColor: "#4ec7e1",
+      }}
+      style={{ backgroundColor: "#F6F8FA" }}
+    />
+  );
   return (
-    <SafeAreaView className="bg-light h-full">
-      <View className="px-4 my-3">
-        <Text className="text-3xl font-psemibold te">Appointments</Text>
+    <SafeAreaView className="bg-general-500 h-full">
+      <View className="px-4 my-2">
+        <Text className="text-3xl font-psemibold ">Appointments</Text>
       </View>
+      <TabView
+        renderTabBar={renderTabBar}
+        navigationState={{ index, routes }}
+        renderScene={renderScene}
+        onIndexChange={setIndex}
+        initialLayout={{ width: layout.width }}
+      />
     </SafeAreaView>
   );
 };

@@ -9,8 +9,8 @@ const ServiceItem = ({ item }) => {
       onPress={() => router.push(item.route)}
       className="p-1 items-center justify-center mx-1 space-y-2 overflow-hidden"
     >
-      <View className="p-1  rounded-full bg-primary-100 ">
-        <View className="bg-general-500 p-3 rounded-full ">
+      <View className="p-1  rounded-full  ">
+        <View className="bg-white p-3 rounded-full shadow-sm ">
           <Image
             resizeMode="contain"
             source={item.image}

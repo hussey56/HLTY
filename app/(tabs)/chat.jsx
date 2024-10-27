@@ -51,7 +51,7 @@ const Chat = () => {
     }, 3000);
   };
   return (
-    <SafeAreaView className="bg-white h-full">
+    <SafeAreaView className="bg-general-500 h-full">
       <FlatList
         className="mb-12 "
         refreshControl={
@@ -82,7 +82,7 @@ const Chat = () => {
               </View>
             </View>
             <View className="mb-1 px-2">
-              <Text className="text-start font-pbold text-[32px] px-2 py-1">
+              <Text className="text-start font-psemibold text-[32px] px-2 py-1">
                 Messages
               </Text>
               <View className="px-1 py-1 mb-2">

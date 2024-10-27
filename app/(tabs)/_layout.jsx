@@ -2,18 +2,17 @@ import { View, Image, Text } from "react-native";
 import React from "react";
 import { Tabs } from "expo-router";
 import { icons, images } from "../../constants";
-import { Colors } from "@/constants/Colors";
 const TabIcon = ({ focused, source }) => {
   return (
     <View className={`flex flex-row justify-center items-center rounded-full `}>
       <View
         className={`rounded-full w-12 h-12 items-center justify-center ${
-          focused ? "bg-white" : ""
+          focused ? "bg-primary-300" : ""
         }`}
       >
         <Image
           source={source}
-          tintColor={focused ? "#232533" : "white"}
+          tintColor={"white"}
           resizeMode="contain"
           className="w-7 h-7"
         />
@@ -37,12 +36,12 @@ const ChatIcon = ({ focused, count }) => {
       )}
       <View
         className={`rounded-full w-12 h-12 items-center justify-center ${
-          focused ? "bg-white" : ""
+          focused ? "bg-primary-300" : ""
         }`}
       >
         <Image
           source={icons.message}
-          tintColor={focused ? "#232533" : "white"}
+          tintColor={"white"}
           resizeMode="contain"
           className="w-7 h-7"
         />
@@ -73,8 +72,7 @@ const TabLayout = () => {
         tabBarInactiveTintColor: "white",
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#16c1d0",
-          borderColor: "#16c1d0",
+          backgroundColor: "#000303dc",
           paddingBottom: 0,
           overflow: "hidden",
           borderRadius: 50,
