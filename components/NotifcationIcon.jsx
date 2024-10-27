@@ -8,7 +8,7 @@ import { Colors } from "../constants/Colors";
 const NotificationIcon = ({ count }) => {
   return (
     <TouchableOpacity
-      onPress={() => router.replace("/(auth)/sign-in")}
+      onPress={() => router.push("/(pages)/notifications")}
       className="relative"
     >
       <View className="w-11  h-11 flex items-center justify-center rounded-full bg-white shadow-sm">

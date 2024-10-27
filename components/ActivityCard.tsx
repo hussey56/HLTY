@@ -17,7 +17,7 @@ const ActivityCard = ({
   showButton = true,
 }: {
   activity: any;
-  showButton: Boolean;
+  showButton?: Boolean;
 }) => {
   const onDelete = () => {
     setVerification({ ...verification, state: "pending" });
@@ -28,12 +28,48 @@ const ActivityCard = ({
     code: "",
     loading: false,
   });
+  const getActivityIcon = (activityname: String) => {
+    switch (activityname) {
+      case "Appointment":
+        return icons.hospital;
+      case "Reports":
+        return icons.reports;
+      case "Ambulance":
+        return icons.ambulance;
+      case "Pharmacy":
+        return icons.pharmacy;
+      case "Home Visit":
+        return icons.doctor;
+      default:
+        return icons.hospital;
+    }
+  };
+  const getActivityIconBg = (activityname: String) => {
+    switch (activityname) {
+      case "Appointment":
+        return "bg-general-600";
+      case "Reports":
+        return "bg-general-600";
+      case "Ambulance":
+        return "bg-general-500";
+      case "Pharmacy":
+        return "bg-success-200";
+      case "Home Visit":
+        return "bg-general-500";
+      default:
+        return "bg-general-300";
+    }
+  };
   return (
     <View className="mb-2 px-1 bg-white border-[1px] border-neutral-200 rounded-xl mx-2 shadow-sm ">
       <View className="p-2  w-full  flex-row  mt-1">
-        <View className="bg-success-300 rounded-lg items-start justify-start p-2">
+        <View
+          className={`${getActivityIconBg(
+            activity.name
+          )} rounded-lg items-start justify-start p-2`}
+        >
           <Image
-            source={icons.hospital}
+            source={getActivityIcon(activity.name)}
             className="h-10 w-10 "
             resizeMode="contain"
           />

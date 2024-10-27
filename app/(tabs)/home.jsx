@@ -16,6 +16,8 @@ const Home = () => {
     { _id: 1, name: "Appointment" },
     { _id: 11, name: "Ambulance" },
     { _id: 2, name: "Reports" },
+    { _id: 3, name: "Pharmacy" },
+    { _id: 4, name: "Home Visit" },
   ]);
 
   const refreshActivity = async () => {

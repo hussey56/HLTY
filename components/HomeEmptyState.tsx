@@ -14,7 +14,7 @@ const HomeEmptyState = ({
   subtitle: String;
   classname?: String;
   button?: Boolean;
-  image: any;
+  image?: any;
 }) => {
   return (
     <View

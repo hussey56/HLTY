@@ -41,7 +41,15 @@ import location from "@/assets/icons/location.png";
 import bill from "@/assets/icons/bill.png";
 import patient from "@/assets/icons/patient.png";
 import deleteicon from "@/assets/icons/delete.png";
+import alertsuccess from "@/assets/icons/alerts/success.png";
+import alertinfo from "@/assets/icons/alerts/info.png";
+import alertwarning from "@/assets/icons/alerts/warning.png";
+import alertcancel from "@/assets/icons/alerts/cancel.png";
 export default {
+  alertcancel,
+  alertinfo,
+  alertsuccess,
+  alertwarning,
   deleteicon,
   patient,
   bill,
