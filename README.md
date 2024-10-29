@@ -1,50 +1,42 @@
-# Welcome to your Expo app 👋
+<div align="center">
+  <img src="./assets/images/HLTY.jpg" width="100%"/>
+</div>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# 🏥 Healthcare App UI - React Native
+A sleek and intuitive React Native healthcare app UI, designed for seamless user experience and easy navigation. This template is perfect for healthcare service providers looking to streamline user interaction and engagement. Explore features designed with accessibility and functionality in mind, including authentication, appointment management, chat support, and personalized notifications.
 
-## Get started
+# ✨ Key Features
 
-1. Install dependencies
+🚀 Splash Screen
+A visually engaging splash screen that welcomes users to the app.
 
-   ```bash
-   npm install
-   ```
+ **🔐 Authentication**
+*  **Login Screen**: Simple and secure user login interface.
+*  **Sign Up Screen**: User-friendly sign-up with email OTP verification and success confirmation modal for email validation.
+*  **Forgot Password**: Includes OTP-based password reset flow to ensure security and simplicity.
 
-2. Start the app
+**🏠 Home Screen**
+*  **Search Bar**: Quickly access services and information.
+*  **Services Slider**: Highlight essential services at a glance.
+*  **Recent Activities**: View recent actions like appointments, reports, medicine purchases, and ambulance services.
 
-   ```bash
-    npx expo start
-   ```
+ **📅 Appointments Screen**
+*  **Upcoming and Completed Tabs**: Manage and review appointments in separate tabs for easy tracking.
+  
+**💬 Chats Screen**
+* **Search Bar**: Easily find and connect with doctors.
+* **Chatroom**: Engaging chatroom interface for real-time conversations.
+  
+**👤 Profile Screen**
 
-In the output, you'll find options to open the app in a
+* **Profile Image and Edit Options**: Easily update profile details and manage personal info.
+* **Logout Button with Confirmation Modal**: Ensures secure log-out with a confirmation option.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+**🔔 Notifications Screen**
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* Lists various types of notifications to keep users updated on important events and reminders.
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# 📱 Additional Screens and Features
+OTP Modals for secure verification.
+Confirmation Modals across key actions to enhance user experience and security.
+Intuitive Navigation and UI Design for a seamless user experience.
