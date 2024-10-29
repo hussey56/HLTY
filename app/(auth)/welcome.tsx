@@ -43,7 +43,7 @@ const onBoarding = () => {
           >
             <Image
               source={item.image}
-              className="w-100 h-[300px] "
+              className="w-100 h-[300px]"
               resizeMode="contain"
             />
             <View className="flex flex-row items-center justify-center w-full mt-10">

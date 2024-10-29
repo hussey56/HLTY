@@ -5,7 +5,7 @@ import { icons } from "../constants";
 import { router } from "expo-router";
 import { Colors } from "../constants/Colors";
 
-const NotificationIcon = ({ count }) => {
+const NotificationIcon = ({ count }: { count: number }) => {
   return (
     <TouchableOpacity
       onPress={() => router.push("/(pages)/notifications")}

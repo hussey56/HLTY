@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
 import React from "react";
 import { icons, images } from "@/constants";
-
+import HomeEmptyState from "@/components/HomeEmptyState";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 const Notifications = () => {
@@ -38,7 +38,7 @@ const Notifications = () => {
     },
   ];
 
-  const getAlertIcon = (alerttype) => {
+  const getAlertIcon = (alerttype: String) => {
     switch (alerttype) {
       case "info":
         return icons.alertinfo;
@@ -52,7 +52,7 @@ const Notifications = () => {
         return icons.alertinfo;
     }
   };
-  const getAlertIconColor = (alerttype) => {
+  const getAlertIconColor = (alerttype: String) => {
     switch (alerttype) {
       case "info":
         return "#16c1d0";
@@ -67,7 +67,7 @@ const Notifications = () => {
     }
   };
   return (
-    <SafeAreaView className="bg-general-500 h-full flex-1">
+    <SafeAreaView className="bg-white h-full flex-1">
       <View className="flex-row items-center">
         <TouchableOpacity onPress={() => router.back()} className="p-5">
           <Image
@@ -83,17 +83,17 @@ const Notifications = () => {
         data={dummy}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <View className="w-full h-16  my-2 mx-2 flex-row items-center justify-around">
+          <TouchableOpacity
+            className="w-full h-16  my-2 mx-2 flex-row items-center justify-around"
+            onPress={() => router.back()}
+          >
             <Image
               source={getAlertIcon(item.type)}
               resizeMode="contain"
               className="w-12 h-12"
               tintColor={getAlertIconColor(item.type)}
             />
-            <View
-              className="w-[80%]  overflow-hidden border-general-100  py-3"
-              style={{ borderBottomWidth: "0.25px" }}
-            >
+            <View className="w-[80%]  overflow-hidden border-general-100  py-3 border-b-[0.5px]">
               <Text
                 className="text-md font-pregular text-black-200"
                 numberOfLines={3}
@@ -102,8 +102,17 @@ const Notifications = () => {
               </Text>
               <Text className="text-sm font-pextralight">{item.time}</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
+        ListEmptyComponent={() => (
+          <HomeEmptyState
+            image={images.emptynotifcations}
+            title={"Nothing Found"}
+            subtitle={"No Notification & Alerts found for you"}
+            button={false}
+          />
+        )}
+        showsVerticalScrollIndicator={false}
       />
     </SafeAreaView>
   );

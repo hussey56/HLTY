@@ -10,6 +10,7 @@ import logo from "@/assets/images/icon.png";
 import check from "@/assets/images/check.png";
 import empty from "@/assets/images/empty-activity.png";
 import emptychat from "@/assets/images/emptychat.png";
+import emptynotifcations from "@/assets/images/empty_notifications.png";
 export default {
   profileimg,
   dr1,
@@ -23,4 +24,5 @@ export default {
   check,
   empty,
   emptychat,
+  emptynotifcations,
 };
